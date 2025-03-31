@@ -1,21 +1,18 @@
 import { useState, useMemo } from 'react';
 
 function Memo3() {
-  // Estado para a Lista Filtrada
+
   const items = ['Banana', 'Maçã', 'Pera', 'Laranja', 'Abacaxi', 'Uva', 'Melancia', 'Cereja'];
   const [filter, setFilter] = useState('');
 
-  // Estado para a Calculadora
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [operation, setOperation] = useState('+');
 
-  // Filtragem otimizadas com useMemo
   const filteredItems = useMemo(() => {
     return items.filter((item) => item.toLowerCase().includes(filter.toLowerCase()));
   }, [filter]);
 
-  // Cálculo otimizado com useMemo
   const result = useMemo(() => {
     switch (operation) {
       case '+': return num1 + num2;

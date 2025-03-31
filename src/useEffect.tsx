@@ -12,7 +12,6 @@ function Effect2() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Contador regressivo
   useEffect(() => {
     if (tempo <= 0) return;
 
@@ -20,10 +19,9 @@ function Effect2() {
       setTempo((prevTempo) => prevTempo - 1);
     }, 1000);
 
-    return () => clearInterval(intervalo); // Limpa o timer ao desmontar o componente
+    return () => clearInterval(intervalo); 
   }, [tempo]);
 
-  // Requisição para a API de Amiibos
   useEffect(() => {
     const apiUrl = 'https://www.amiiboapi.com/api/amiibo/';
 
@@ -43,9 +41,8 @@ function Effect2() {
         setLoading(false);
       });
 
-  }, []); // Executa apenas na montagem do componente
+  }, []); 
 
-  // Renderiza enquanto carrega ou se houver erro
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>Erro: {error}</p>;
 

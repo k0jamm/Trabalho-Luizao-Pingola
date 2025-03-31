@@ -10,11 +10,10 @@ import { Link } from 'react-router-dom';
 
 function App() {
   
-
   return (
     <>
 
-<Router>
+    <Router>
 
       <header style={{ padding: "10px", background: "#5C4033", color: "white" }}>
         <h1>Trabalho luizao pingolas</h1>
@@ -23,7 +22,6 @@ function App() {
         </nav>
       </header>
       <div>
-        
         
         <Routes>
           <Route path="/State1" element={<State1 />} />
@@ -35,8 +33,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-
-      
 
     </>
   );

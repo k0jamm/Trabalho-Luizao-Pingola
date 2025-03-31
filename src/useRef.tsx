@@ -1,23 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 
 function Ref4() {
-  // Referência para o campo de nome
+
   const nameInputRef = useRef<HTMLInputElement>(null);
-
-  // Estado para o timer
   const [timer, setTimer] = useState(0);
-  const intervalRef = useRef<number | null>(null); // Alterado para 'number'
-
+  const intervalRef = useRef<number | null>(null); 
   const [isRunning, setIsRunning] = useState(false);
 
-  // Foca automaticamente no input de nome ao carregar
   useEffect(() => {
     if (nameInputRef.current) {
       nameInputRef.current.focus();
     }
   }, []);
 
-  // Função para iniciar ou retomar o timer
   const startTimer = () => {
     if (!isRunning) {
       intervalRef.current = window.setInterval(() => {
@@ -27,11 +22,10 @@ function Ref4() {
     }
   };
 
-  // Função para pausar o timer
   const pauseTimer = () => {
     if (intervalRef.current !== null) {
       clearInterval(intervalRef.current);
-      intervalRef.current = null; // Limpa a referência do intervalo
+      intervalRef.current = null; 
       setIsRunning(false);
     }
   };

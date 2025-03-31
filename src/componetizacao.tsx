@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-// 🔹 Header da Aplicação
 function Header() {
   return (
     <header style={{ padding: "10px", background: "#282c34", color: "white" }}>
@@ -13,7 +12,6 @@ function Header() {
   );
 }
 
-// 🔹 Componente de Cache com API
 function CacheComponent() {
   const [data, setData] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
@@ -65,7 +63,6 @@ function CacheComponent() {
   );
 }
 
-// 🔹 Componente de Timer com Pausa e Retomada
 function Timer() {
   const [timer, setTimer] = useState(0);
   const intervalRef = useRef<number | null>(null);
@@ -99,7 +96,6 @@ function Timer() {
   );
 }
 
-// 🔹 Componente de Formulário com Auto Focus
 function Formulario() {
   const nameInputRef = useRef<HTMLInputElement>(null);
 
@@ -119,7 +115,6 @@ function Formulario() {
   );
 }
 
-// 🔹 Componente Principal (App)
 function Componetizacao6() {
   return (
     <div>
