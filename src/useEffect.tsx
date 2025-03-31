@@ -7,6 +7,7 @@ interface Amiibo {
 }
 
 function Effect2() {
+  
   const [tempo, setTempo] = useState(10);
   const [amiibos, setAmiibos] = useState<Amiibo[]>([]);
   const [loading, setLoading] = useState(true);
